@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alcool_ou_gasolina/widgets/input.widget.dart';
-import 'package:flutter_alcool_ou_gasolina/widgets/loading-button.widget.dart';
-import 'package:flutter_alcool_ou_gasolina/widgets/logo.widget.dart';
-import 'package:flutter_alcool_ou_gasolina/widgets/submit-form.widget.dart';
-import 'package:flutter_alcool_ou_gasolina/widgets/success.widget.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:flutter_alcool_ou_gasolina/pages/home.page.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,29 +15,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  var _gasCtrl = new MoneyMaskedTextController();
-  var _alcCtrl = new MoneyMaskedTextController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      body: ListView(
-        children: [
-          Logo(),
-          SubmitForm(
-            alcCtrl: _alcCtrl,
-            gasCtrl: _gasCtrl,
-            submitFunc: () {},
-            busy: false,
-          ),
-        ],
-      ),
     );
   }
 }
